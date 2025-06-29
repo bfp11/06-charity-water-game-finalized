@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Drop Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="start-screen" class="screen">
+    <h1>Water Drop</h1>
+    <img src="https://www.charitywater.org/images/logo.svg" alt="charity: water logo" class="logo">
+    <p>High Score: <span id="high-score">0</span></p>
+    <button id="start-btn">Start Game</button>
+  </div>
+
+  <div id="game-screen" class="screen hidden">
+    <div class="hud">
+      <p>Score: <span id="score">0</span></p>
+      <p>Time: <span id="timer">60</span>s</p>
+    </div>
+    <div id="game-area"></div>
+  </div>
+
+  <div id="end-screen" class="screen hidden">
+    <h2>Your Score: <span id="final-score"></span></h2>
+    <button id="play-again-btn">Play Again</button>
+    <a href="https://www.charitywater.org/" target="_blank">Visit charity: water</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
