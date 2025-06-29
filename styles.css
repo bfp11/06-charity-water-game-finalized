@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #e0f7fa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #e0f7fa;
   overflow: hidden;
 }
 
@@ -11,14 +11,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
+  text-align: center;
 }
 
 .hidden {
   display: none;
 }
 
-h1, h2 {
+h1, h2, p, label {
   color: #0277bd;
 }
 
@@ -27,10 +28,20 @@ h1, h2 {
   margin: 20px;
 }
 
-button {
+button, .diff-btn {
+  margin: 8px;
   padding: 10px 20px;
   font-size: 18px;
   cursor: pointer;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+button:hover, .diff-btn:hover {
+  background-color: #01579b;
 }
 
 .hud {
@@ -40,36 +51,30 @@ button {
   width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 }
 
 #game-area {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  background: url('img/background.jpg') no-repeat center center;
+  background-size: cover;
 }
 
+/* Drop & Jug image styling */
 .drop, .jug {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-}
-
-.drop.blue {
-  background: blue;
-}
-
-.drop.grey {
-  background: grey;
-}
-
-.jug {
-  background: yellow;
-  border: 2px solid #ffeb3b;
-  border-radius: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0;
+  border: none;
 }
 
 .glow {
@@ -83,9 +88,22 @@ button {
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
+  0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  75% { transform: translateX(5px); }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ffffffcc;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #0277bd;
+  text-decoration: none;
 }

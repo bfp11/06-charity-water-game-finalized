@@ -7,13 +7,21 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Start Screen -->
   <div id="start-screen" class="screen">
     <h1>Water Drop</h1>
     <img src="https://www.charitywater.org/images/logo.svg" alt="charity: water logo" class="logo">
+    
+    <div class="difficulty-select">
+      <label>Select Difficulty:</label>
+      <button class="diff-btn" data-mode="normal">Normal</button>
+      <button class="diff-btn" data-mode="hard">Hard</button>
+    </div>
+
     <p>High Score: <span id="high-score">0</span></p>
-    <button id="start-btn">Start Game</button>
   </div>
 
+  <!-- Game Screen -->
   <div id="game-screen" class="screen hidden">
     <div class="hud">
       <p>Score: <span id="score">0</span></p>
@@ -22,11 +30,20 @@
     <div id="game-area"></div>
   </div>
 
+  <!-- End Screen -->
   <div id="end-screen" class="screen hidden">
     <h2>Your Score: <span id="final-score"></span></h2>
     <button id="play-again-btn">Play Again</button>
     <a href="https://www.charitywater.org/" target="_blank">Visit charity: water</a>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Learn more or donate at <a href="https://www.charitywater.org/" target="_blank">charitywater.org</a></p>
+  </footer>
+
+  <!-- Audio -->
+  <audio id="drop-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_327d88dc91.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
